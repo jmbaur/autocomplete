@@ -1,7 +1,6 @@
 package autocomplete
 
 import (
-	"fmt"
 	"io/ioutil"
 	"path/filepath"
 )
@@ -45,9 +44,6 @@ func (c *Completer) load() error {
 }
 
 func (c *Completer) Complete(fragment string) ([]string, error) {
-	existsCompletions := c.Dictionary.find(fragment)
-	if !existsCompletions {
-		fmt.Println("Not a word")
-	}
-	return []string{}, nil
+	completions := c.Dictionary.find(fragment)
+	return completions, nil
 }

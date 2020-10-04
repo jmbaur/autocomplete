@@ -26,4 +26,4 @@ watermelon
 
 ## TODO
 
-- [ ] traverse all possible words after the last node is found for a given word fragment
+- [x] traverse all possible words after the last node is found for a given word fragment
