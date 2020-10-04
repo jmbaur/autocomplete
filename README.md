@@ -11,7 +11,7 @@ type node map[string]*node
 ## Usage
 
 Input:
-`./autocomplete waterm`
+`./autocomplete <dictionary file> waterm`
 
 Output:
 
@@ -21,6 +21,8 @@ watermanship
 watermark
 watermelon
 ```
+
+\*A dictionary file has a declaration of every word on a new line
 
 ## TODO
 

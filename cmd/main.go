@@ -9,13 +9,14 @@ import (
 )
 
 func main() {
-	if len(os.Args) != 2 {
+	if len(os.Args) != 3 {
 		fmt.Println("Usage: autocomplete <word to complete>")
 		os.Exit(1)
 	}
-	wordToComplete := os.Args[1]
+	dictionary := os.Args[1]
+	wordToComplete := os.Args[2]
 
-	completer, err := autocomplete.NewCompleter("./dictionary_large.txt")
+	completer, err := autocomplete.NewCompleter(dictionary)
 	if err != nil {
 		log.Fatal(err)
 	}
