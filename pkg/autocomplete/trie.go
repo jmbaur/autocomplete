@@ -47,7 +47,7 @@ func (t trie) find(word string) []string {
 	})
 
 	newWords := words
-	words = []string{}
+	words = nil
 	return newWords
 }
 
