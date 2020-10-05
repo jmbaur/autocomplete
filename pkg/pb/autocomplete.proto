@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "github.com/jmbaur/autocomplete/pkg/pb";
+
+package pb;
+
+// The greeting service definition.
+service Completer {
+  // Sends a greeting
+  rpc Complete (WordRequest) returns (WordsReply) {}
+}
+
+// The request message containing the user's name.
+message WordRequest {
+  string fragment = 1;
+}
+
+// The response message containing the greetings
+message WordsReply {
+  repeated string completions = 1;
+}
