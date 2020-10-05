@@ -6,12 +6,12 @@ import (
 
 const end string = "!"
 
-var words []string
-
 type node map[string]*node
 type trie struct {
 	base *node
 }
+
+var words []string
 
 func (t trie) insert(word string) {
 	current := *t.base
@@ -45,7 +45,10 @@ func (t trie) find(word string) []string {
 		}
 		return true
 	})
-	return words
+
+	newWords := words
+	words = []string{}
+	return newWords
 }
 
 func traverse(curNode node, word string) {
