@@ -13,7 +13,8 @@ import (
 )
 
 const (
-	port = ":50051"
+	port              = ":50051"
+	defaultDictionary = "/usr/share/dict/words"
 )
 
 var completer *autocomplete.Completer
@@ -34,11 +35,16 @@ func (s *server) Complete(ctx context.Context, in *pb.WordRequest) (*pb.WordsRep
 
 func main() {
 	var err error
-	if len(os.Args) != 2 {
+	var dictionary string
+	switch len(os.Args) {
+	case 2:
+		dictionary = os.Args[1]
+	case 1:
+		dictionary = defaultDictionary
+	default:
 		fmt.Println("Usage: autocompleted <path to dictionary>")
 		os.Exit(1)
 	}
-	dictionary := os.Args[1]
 	completer, err = autocomplete.NewCompleter(dictionary)
 	if err != nil {
 		log.Fatal(err)
