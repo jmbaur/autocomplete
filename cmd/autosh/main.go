@@ -43,5 +43,6 @@ func main() {
 		for _, v := range completions {
 			fmt.Printf("%s\n", v)
 		}
+		fmt.Printf("%d completions\n", len(completions))
 	}
 }
