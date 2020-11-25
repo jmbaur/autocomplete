@@ -12,7 +12,7 @@ const (
 
 var (
 	rootCmd = &cobra.Command{
-		Use:   "autocomp",
+		Use:   "autocomplete",
 		Short: "Short description",
 		Long:  "Long Description",
 	}
